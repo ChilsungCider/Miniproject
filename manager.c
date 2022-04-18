@@ -1,6 +1,6 @@
 #include "manager.h"
 
-void Clear(void)
+void Clear(void) // 입력버퍼 없애기 
 {
 	while (getchar() != '\n')
 		;
@@ -24,7 +24,7 @@ int selectProduct()
 	return menu;
 }
 
-int plusProduct(struct food_struct *p[], int number)
+int plusProduct(struct food_struct *p[], int number) // 추가기능
 {
 	p[number] = (struct food_struct *)malloc(sizeof(struct food_struct));
 	printf("제품명 : ");
@@ -41,7 +41,7 @@ int plusProduct(struct food_struct *p[], int number)
 	return number + 1;
 }
 
-void readProduct(struct food_struct *p[], int number)
+void readProduct(struct food_struct *p[], int number) // 조회
 {
 	printf("\n================================================================\n");
 	printf("NO.		제품명         중량    판매가격  배송방법\n");
@@ -52,7 +52,7 @@ void readProduct(struct food_struct *p[], int number)
 	}
 }
 
-int updateProduct(struct food_struct *p[], int number)
+int updateProduct(struct food_struct *p[], int number) // 수정기능
 {
 	int flag;
 	printf("수정할 번호 (0 : 취소) : ");
@@ -79,7 +79,7 @@ int updateProduct(struct food_struct *p[], int number)
 	return number;
 }
 
-int deleteProduct(struct food_struct *p[], int number)
+int deleteProduct(struct food_struct *p[], int number) // 삭제기능
 {
 	int index;
 	printf("삭제할 번호 (0 : 취소) : ");
@@ -98,7 +98,7 @@ int deleteProduct(struct food_struct *p[], int number)
 	return number - 1;
 }
 
-void saveProduct(struct food_struct *p[], int number)
+void saveProduct(struct food_struct *p[], int number) // 파일로 저장기능
 {
 	FILE *fp = fopen("product.txt", "w");
 
@@ -110,7 +110,7 @@ void saveProduct(struct food_struct *p[], int number)
 	printf("=> 저장되었습니다.\n");
 }
 
-void searchProduct1(struct food_struct *p[], int number) 
+void searchProduct1(struct food_struct *p[], int number) // 검색기능1 (제품명)
 {
 	char search[100];
 
@@ -131,7 +131,7 @@ void searchProduct1(struct food_struct *p[], int number)
 	printf("\n");
 }
 
-void searchProduct2(struct food_struct *p[], int number) 
+void searchProduct2(struct food_struct *p[], int number) // 검색기능2 (배송방법) 
 {
 	int search = 0;
 	printf("\n검색할 배송방법 ? ");
@@ -150,7 +150,7 @@ void searchProduct2(struct food_struct *p[], int number)
 	printf("\n");
 }
 
-void searchProduct3(struct food_struct *p[], int number) 
+void searchProduct3(struct food_struct *p[], int number) // 검색기능3 (가격)
 {
 	int min_pay = 0, max_pay = 0;
 
@@ -171,7 +171,7 @@ void searchProduct3(struct food_struct *p[], int number)
 	}
 }
 
-int loadData(struct food_struct *p[], int number)
+int loadData(struct food_struct *p[], int number) // 파일 불러오기
 {
 	int count = 0;
 	FILE *fp = fopen("product.txt", "r");

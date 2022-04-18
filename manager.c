@@ -116,6 +116,7 @@ void searchProduct1(struct food_struct *p[], int number) // 검색기능1 (제�
 
 	printf("\n검색할 제품? ");
 	scanf("%[^\n]", search);
+	Clear();
 	printf("\n");
 
 	for (int i = 0; i < number; i++)

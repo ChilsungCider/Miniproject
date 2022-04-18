@@ -180,6 +180,7 @@ int loadData(struct food_struct *p[], int number) // 파일 불러오기
 	{
 		while (!feof(fp))
 		{
+			p[count] = (struct food_struct *)malloc(sizeof(struct food_struct));
 			int ret = fscanf(fp, "%[^\n]\n%s\n%d\n%d\n", p[count]->name, p[count]->weight, &p[count]->price, &p[count]->way);
 			if (ret < 2)
 				continue;

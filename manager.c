@@ -6,7 +6,7 @@ void Clear(void) // 입력버퍼 없애기
 		;
 }
 
-int selectProduct()
+int selectProduct() // 시작 메뉴 정하기
 {
 	int menu;
 	printf("\n");
@@ -14,9 +14,9 @@ int selectProduct()
 	printf("2. 제품 조회\n");
 	printf("3. 제품 수정\n");
 	printf("4. 제품 삭제\n");
-	printf("5. 제품 저장\n");
+	printf("5. 파일 저장\n");
 	printf("6. 제품 검색\n");
-	printf("0. 제품 종료\n");
+	printf("0. 종료\n");
 	printf("\n=> 원하는 항목 : ");
 	scanf("%d", &menu);
 	printf("\n");
@@ -26,7 +26,7 @@ int selectProduct()
 
 int plusProduct(struct food_struct *p[], int number) // 추가기능
 {
-	p[number] = (struct food_struct *)malloc(sizeof(struct food_struct));
+	p[number] = (struct food_struct *)malloc(sizeof(struct food_struct)); // 동적 메모리 할당
 	printf("제품명 : ");
 	scanf("%[^\n]", p[number]->name);
 	getchar();
@@ -114,7 +114,7 @@ void searchProduct1(struct food_struct *p[], int number) // 검색기능1 (제�
 {
 	char search[100];
 
-	printf("\n검색할 제품? ");
+	printf("\n검색할 제품명? ");
 	scanf("%[^\n]", search);
 	Clear();
 	printf("\n");
@@ -188,7 +188,7 @@ int loadData(struct food_struct *p[]) // 파일 불러오기
 			count++;
 		}
 		fclose(fp);
-		printf("=> 로딩 성공!\n");
+		printf("=> 파일 로딩 성공!\n");
 		return count;
 	}
 	else

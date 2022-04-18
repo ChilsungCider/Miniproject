@@ -11,5 +11,4 @@ $(DTARGET) : $(OBJECTS)
 	$(CC) $(CFLAGS) -DDEBUG -o $@ $^
 
 clean:
-	rm *.o shop 
-	rm *.o shop_debug
+	rm *.o shop shop_debug

@@ -52,11 +52,6 @@ int main()
 					searchProduct3(Product, number);
 					break;
 				}
-				else
-				{
-					printf("기능(1:이름, 2:가격, 3:배송방법) : ");
-					scanf("%d", &search);
-				}
 			}
 		}
 	}

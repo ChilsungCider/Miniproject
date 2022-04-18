@@ -34,7 +34,7 @@ int plusProduct(struct food_struct *p[], int number) // 추가기능
 	scanf("%s", p[number]->weight);
 	printf("판매가격 : ");
 	scanf("%d", &p[number]->price);
-	printf("배송방법(1: 새벽배송/2: 택배배송) : ");
+	printf("배송방법(1: 새벽배송/2: 택배배송/3: 포장) : ");
 	scanf("%d", &p[number]->way);
 	printf("=> 추가되었습니다.\n");
 
@@ -70,7 +70,7 @@ int updateProduct(struct food_struct *p[], int number) // 수정기능
 		getchar();
 		printf("판매가격 : ");
 		scanf("%d", &p[flag - 1]->price);
-		printf("배송방법(1: 새벽배송/2: 택배배송) : ");
+		printf("배송방법(1: 새벽배송/2: 택배배송/3: 포장) : ");
 		scanf("%d", &p[flag - 1]->way);
 
 		printf("=> 수정되었습니다.\n");

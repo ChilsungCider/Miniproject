@@ -2,6 +2,9 @@
 
 int main()
 {
+#ifdef DEBUG
+	printf("=> DEBUGMODE\n");
+#endif
 	struct food_struct *Product[20];
 	int number = 0;
 	int menu, search = 0;
@@ -12,6 +15,9 @@ int main()
 	{
 		menu = selectProduct();
 		Clear();
+#ifdef DEBUG
+	printf("=> 선택한 번호 : %d\n", menu);
+#endif
 		if (menu == 0)
 			break;
 		if (menu == 1)

@@ -1,4 +1,5 @@
 #include "manager.h"
+#define DEBUG
 
 int main()
 {

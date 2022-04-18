@@ -172,7 +172,7 @@ void searchProduct3(struct food_struct *p[], int number) // 검색기능3 (가�
 	}
 }
 
-int loadData(struct food_struct *p[], int number) // 파일 불러오기
+int loadData(struct food_struct *p[]) // 파일 불러오기
 {
 	int count = 0;
 	FILE *fp = fopen("product.txt", "r");
